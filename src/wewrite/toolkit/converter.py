@@ -1,8 +1,6 @@
 """
-Markdown to WeChat-compatible HTML converter.
-
-Forked from wechat_article_skills/scripts/markdown_to_html.py,
-adapted for YAML-driven themes and agent integration.
+Markdown to WeChat-compatible HTML converter with YAML-driven themes and
+agent integration.
 """
 
 import re
