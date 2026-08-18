@@ -1,0 +1,29 @@
+name: Checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - '.github/workflows/checks.yml'
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package + pytest
+        run: pip install -e . pytest
+      - name: Tests
+        run: python3 -m pytest tests/ -q
+      - name: Context budget guard
+        run: python3 scripts/context_budget.py --budget-tokens 15500

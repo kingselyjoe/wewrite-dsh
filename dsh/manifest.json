@@ -1,0 +1,19 @@
+{
+  "schema": "wewrite-dsh-adapter/v1",
+  "name": "wewrite",
+  "version": "4.2.1",
+  "description": "WeWrite manifest for DeepSeek Harness filesystem skills.",
+  "target": "$DSH_HOME/skills",
+  "skills": [
+    "wewrite",
+    "wewrite-style",
+    "wewrite-topic",
+    "wewrite-write",
+    "wewrite-review",
+    "wewrite-visual",
+    "wewrite-publish",
+    "wewrite-learn",
+    "wewrite-stats",
+    "wewrite-rewrite"
+  ]
+}

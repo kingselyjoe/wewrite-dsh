@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wewrite"
+dynamic = ["version"]
+description = "微信公众号内容管道的确定性工具层：写作质量评分、排版转换、微信API、生图、混合路由写作"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "markdown>=3.10",
+    "beautifulsoup4>=4.14",
+    "cssutils>=2.11",
+    "requests>=2.32",
+    "pyyaml>=6.0",
+    "Pygments>=2.17",
+    "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+# fetch-article 的二级降级（Playwright 抓取）；不装也能用 requests 路径
+browser = ["playwright>=1.50", "camoufox[geoip]>=0.4"]
+
+[project.urls]
+Repository = "https://github.com/kingselyjoe/wewrite-dsh"
+
+[project.scripts]
+wewrite = "wewrite.cli:main"
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+wewrite = [
+    "toolkit/themes/*.yaml",
+    "data/*.md",
+]

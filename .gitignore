@@ -1,0 +1,57 @@
+# Credentials
+config.yaml
+
+# User data (generated at runtime, not tracked)
+style.yaml
+history.yaml
+playbook.md
+corpus/
+lessons/
+
+# Legacy local files (keep ignored for older installations)
+writing-config.yaml
+optimization-results.tsv
+
+# Generated output（v2.2 起在 ~/.wewrite/，此规则防本地遗留误交）
+output/
+
+# User-local reference/draft articles (external 爆款范文 collection, not part of the skill)
+example/
+
+# Legacy client directories
+clients/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/*
+build/
+.venv/
+.venv
+venv/
+
+# Local web tool dev: skill→backend venv symlink target + runtime image artifacts
+.artifacts/
+
+# Internal dev docs（README 引用的公开资产白名单放行）
+docs/*
+!docs/screenshots/
+!docs/demo-article.md
+!docs/star-history.svg
+!docs/evals.json
+!docs/content-quality-rubric.md
+!docs/deepseek-harness.md
+CLAUDE.md
+
+# IDE
+.vscode/
+.idea/
+
+# Next.js build/export artifacts
+web/frontend/.next/
+web/frontend/out/
